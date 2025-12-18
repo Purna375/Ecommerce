@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs - Male-Fashion</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      background-color: #eaeff4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #A96E29;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      cursor: pointer;
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.active::after {
+      content: "-";
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background: #fff;
+      padding: 0 15px;
+      color: #333;
+    }
+
+    .faq-answer.open {
+      padding: 15px;
+      max-height: 500px;
+    }
+    .primary-btn {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 5px 5px;
+	color: #ffffff;
+	background: #000000;
+	letter-spacing: 4px;
+}
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="./index.html"><button class="primary-btn">Back</button></a>
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <div class="faq-question">What is Male-Fashion?</div>
+      <div class="faq-answer">
+        Male-Fashion is a modern platform offering curated fashion for men, helping you stay stylish with ease.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I create an account?</div>
+      <div class="faq-answer">
+        Click on the "Sign Up" button on the login page, fill in your details, and you're good to go.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What if I forgot my password?</div>
+      <div class="faq-answer">
+        On the login form, click "Forgot password?" to reset your password via email.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I update my profile later?</div>
+      <div class="faq-answer">
+        Yes, once logged in, you can go to your profile settings and update your information anytime.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I contact support?</div>
+      <div class="faq-answer">
+        You can reach out to our support team through the Contact Us page or email us at support@malefashion.com.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("active");
+        const answer = q.nextElementSibling;
+        answer.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+
+</html>
